@@ -1,6 +1,8 @@
 import { Component, React } from 'react'
 import * as ReactDOM from 'react-dom'
 import CardList from './components/card-list/card-list.component'
+import SearchBox from './components/search-box/search-box.component'
+import './App.css'
 class App extends Component {
 	constructor() {
 		super()
@@ -44,11 +46,11 @@ class App extends Component {
 
 		return (
 			<div className='App'>
-				<input
-					className='search-box'
-					type='search'
+				<h1 className='app-title'>Monster Rolodex</h1>
+				<SearchBox
+					className='monsters-search-box'
+					change={onSearchChange}
 					placeholder='search monsters'
-					onChange={onSearchChange}
 				/>
 				{/* {this.state.monsters.map((monster) => {
 					return <h1 key={monster.id}>{monster.name}</h1>
